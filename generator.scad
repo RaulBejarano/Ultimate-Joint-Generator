@@ -1,5 +1,6 @@
-$fn = 100;
+// Section: Parameters
 
+$fn = 100;
 section = false;
 
 pipe_d = 21;
@@ -13,6 +14,9 @@ spins = [0, 90, 90, 45];
 margins = [5, 5, 5, 5];
 holes = [1, 1, 1, 1]; // 0:Full opened,1:Ring,2:No hole
 
+// End of section: Parameters
+
+/* [Hidden] */
 outer_d = pipe_d + 2 * thickness;
 
 
