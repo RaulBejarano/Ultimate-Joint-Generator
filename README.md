@@ -25,7 +25,7 @@ Fist of all you have to download several things:
 
 ### :hammer: Creating our first connector
 
-Let's start by opening the file `generator.scad` with OpenSCAD.
+Let's start by opening the file `example.scad` with OpenSCAD.
 
 You will see some code but we only are interested in the parameters inside the section `Parameters`. Let's change some of them:
 
@@ -54,7 +54,6 @@ rotationsY = [0, 90];
 spins = [0, 90];
 margins = [5, 5];
 holes = [1, 1];
-
 ```
 That's it! Just by adding a new column you will get a new arm.
 
@@ -85,7 +84,7 @@ Now it's your turn. Play with the parameters and try adding more arms, different
 
 Feel free to contribute to this project as much as you want.
 
-:children_crossing: If you are new here we recommend you to start by playing with the main design file [`generator.scad`](./generator.scad).
+:children_crossing: If you are new contributing we recommend you to start by playing with the core design file [`generator.scad`](./src/generator.scad).
 
 :memo: When you see something you want to add, modify or refactor first of all you should **create a new issue** providing as much information as you can. We will appreciate if you can write as an user story (e.g. `AS [a user persona], I WANT [to perform this action] SO THAT [I can accomplish this goal]`.) 
 
