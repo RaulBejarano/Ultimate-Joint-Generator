@@ -18,6 +18,7 @@ arm1 = [
     ["hole", 2]  // 0:Full opened,1:Ring,2:No hole
 ];
 
+/*
 arm2 = [
     ["height", 20],
     ["rotationX", 90],
@@ -26,8 +27,9 @@ arm2 = [
     ["margin", 5],
     ["hole", 2] // 0:Full opened,1:Ring,2:No hole
 ];
+*/
 
-arms = [ arm1, arm2 ];
+arms = [ arm1 ];
 
 // End of section: Parameters
 

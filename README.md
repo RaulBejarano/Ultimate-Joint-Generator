@@ -1,5 +1,5 @@
 # Ultimate Joint Generator
-The Ultimate Joint Generator is an open source project that provides a way to generate STL files to 3D-print parametric connectors to build greenhouses, pipe connectors, or whatever structure you need.
+The Ultimate Joint Generator is an open source project that provides a way to generate STL files to 3D-printed parametric connectors to build greenhouses, pipe connectors, or whatever structure you need.
 
 |![90 degree connector](./img/preview_1.PNG)|![extended T connector](./img/preview_2.PNG)|
 |---|---|
@@ -34,28 +34,46 @@ You will see some code but we only are interested in the parameters inside the s
 - `thickness = 4;` this sets the size of the walls of the connector.
 - `screw_d = 5;` if you want to use screws you should set this value to their diameter, if not set it to 0.
   
-And now the difficult part, the vector that defines our connector. Actually you only need to know that theese parameters defines how is goint to be each arm, and that a column represents all parameters for just one arm.
+And now the difficult part. This defines an arm:
+```
+arm1 = [
+    ["height", 20],
+    ["rotationX", 0],
+    ["rotationY", 0],
+    ["spin", 0],
+    ["margin", 5],
+    ["hole", 2]
+];
+```
 
-- `heights = [20];` This vector sets the height (lenght) of each arm.
-- `rotationsX = [0];` This vector sets the rotation in degrees in X plane of each arm.
-- `rotationsY = [0];` This vector sets the rotation in degrees in Y plane of each arm.
-- `spins = [0];` This vector sets how many degrees rotates an arm over itself.
-- `margins = [5];` This vector sets the margins in each arm (see parameters cheatset)
-- `holes = [1];` This vector sets wich kind of hole will be used in each arm. It can take the values: 0 for full opened, 1 for ringed and 2 for no hole.
 
-If you use theese values and render with OpenSCAD you will get something similar to the image in parameter cheatsheet.
+- `height` sets the height (length) of each arm.
+- `rotationX` sets the rotation in degrees in X plane of this arm.
+- `rotationY` sets the rotation in degrees in Y plane of this arm.
+- `spin` sets how many degrees rotates an arm over itself.
+- `margin` sets the margin (see parameters cheatset)
+- `hole` sets wich kind of hole will be used in this arm. It can take the values: 0 for full opened, 1 for ringed and 2 for no hole.
 
-Probably you want to have more than an arm, try changing your parameters to this:
+If you use this values and render with OpenSCAD you will get something similar to the image in parameter cheatsheet.
+
+But, probably you want to have more than an arm so let's add something like this below `arm1` definition:
 
 ```
-heights = [20, 20];
-rotationsX = [0, 0];
-rotationsY = [0, 90];
-spins = [0, 90];
-margins = [5, 5];
-holes = [1, 1];
+arm2 = [
+    ["height", 20],
+    ["rotationX", 90],
+    ["rotationY", 0],
+    ["spin", 0],
+    ["margin", 5],
+    ["hole", 2] // 0:Full opened,1:Ring,2:No hole
+];
 ```
-That's it! Just by adding a new column you will get a new arm.
+And add our new `arm2` to the `arms` vector:
+```
+arms = [ arm1, arm2 ];
+```
+
+That's all! Render it and you will have a new arm.
 
 Now it's your turn. Play with the parameters and try adding more arms, different rotations, spins, etc. Let's make something awesome!
 
@@ -64,20 +82,6 @@ Now it's your turn. Play with the parameters and try adding more arms, different
 ### :gear: Parameters cheatsheet
 
 ![Parameters](./img/parameters.PNG)
-
-| Parameter   | Description  | Default value  |
-|---|---|---|
-| section  | Debugging parameter that allows to see inside the connector  | false  |
-| pipe_d  | Inner diameter of the connector arm  | 21  |
-| thickness  | Defines the wall thickness  | 4  |
-| screw_d  | Screw diameter of every connector arm  | 5  |
-| heights  | Vector of arm heights  |   |
-| rotationsX  | Vector of arm rotations in x-axis  |   |
-| rotationsY  | Vector of arm rotations in y-axis  |   |
-| spins  | Vector of arm spins  |   |
-| margins  | Vector of arm margins  |   |
-| holes  | Vector of arm hole types. Values: 0: Full opened,1: Ring,2: No hole  |   |
-
 
 
 ## Contributing
