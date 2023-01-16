@@ -1,4 +1,7 @@
 # Ultimate Joint Generator
+
+![my badge](https://badgen.net/badge/release/v2.0.1?icon=github)
+
 The Ultimate Joint Generator is an open source project that provides a way to generate STL files to 3D-printed parametric connectors to build greenhouses, pipe connectors, or whatever structure you need.
 
 |![90 degree connector](./img/preview_1.PNG)|![extended T connector](./img/preview_2.PNG)|
