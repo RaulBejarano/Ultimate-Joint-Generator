@@ -1,5 +1,4 @@
 module generator(
-    section = false,
     pipe_d = 20,
     thickness = 4,
     screw_d = 5,

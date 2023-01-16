@@ -3,7 +3,6 @@ use <src/generator.scad>;
 // Section: Parameters
 
 $fn = 100;
-section = false;
 
 pipe_d = 20;
 thickness = 4;
@@ -37,7 +36,6 @@ arms = [ arm1 ];
 // End of section: Parameters
 
 generator(
-    section,
     pipe_d,
     thickness,
     screw_d,
