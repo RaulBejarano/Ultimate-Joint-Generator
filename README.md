@@ -29,7 +29,6 @@ Let's start by opening the file `example.scad` with OpenSCAD.
 
 You will see some code but we only are interested in the parameters inside the section `Parameters`. Let's change some of them:
 
-- `section = true;`this parameter allow us to "cut" to the middle our design for debugging purposes. Remember to set it to `false` before creating the final model.
 - `pipe_d = 20;` this is the diameter of every pipe that will connect to our connector
 - `thickness = 4;` this sets the size of the walls of the connector.
 - `screw_d = 5;` if you want to use screws you should set this value to their diameter, if not set it to 0.
