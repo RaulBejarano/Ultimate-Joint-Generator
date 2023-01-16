@@ -1,6 +1,10 @@
 # Ultimate Joint Generator
 
-![my badge](https://badgen.net/badge/release/v2.0.1?icon=github)
+![version](https://badgen.net/badge/version/v2.0.2?icon=github)
+![license](https://badgen.net/github/license/RaulBejarano/Ultimate-Joint-Generator)
+![commits](https://badgen.net/github/commits//RaulBejarano/Ultimate-Joint-Generator/main)
+
+
 
 The Ultimate Joint Generator is an open source project that provides a way to generate STL files to 3D-printed parametric connectors to build greenhouses, pipe connectors, or whatever structure you need.
 
@@ -54,7 +58,7 @@ arm1 = [
 - `rotationY` sets the rotation in degrees in Y plane of this arm.
 - `spin` sets how many degrees rotates an arm over itself.
 - `margin` sets the margin (see parameters cheatset)
-- `hole` sets wich kind of hole will be used in this arm. It can take the values: 0 for full opened, 1 for ringed and 2 for no hole.
+- `hole` sets which kind of hole will be used in this arm. It can take the values: 0 for full opened, 1 for ringed and 2 for no hole.
 
 If you use this values and render with OpenSCAD you will get something similar to the image in parameter cheatsheet.
 
@@ -92,7 +96,7 @@ Feel free to contribute to this project as much as you want.
 
 :children_crossing: If you are new contributing we recommend you to start by playing with the core design file [`generator.scad`](./src/generator.scad).
 
-:memo: When you see something you want to add, modify or refactor first of all you should **create a new issue** providing as much information as you can. We will appreciate if you can write as an user story (e.g. `AS [a user persona], I WANT [to perform this action] SO THAT [I can accomplish this goal]`.) 
+:memo: When you see something you want to add, modify or refactor first of all, you should **create a new issue** providing as much information as you can. We will appreciate if you can write as an user story (e.g. `AS [a user persona], I WANT [to perform this action] SO THAT [I can accomplish this goal]`.) 
 
 :twisted_rightwards_arrows: Then you should create a fork of the project, clone it to your local, create a new local branch and you will be ready to start making changes. You'll need a recent version of [OpenSCAD.](https://openscad.org/)
 
