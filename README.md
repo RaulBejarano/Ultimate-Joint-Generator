@@ -1,6 +1,6 @@
 # Ultimate Joint Generator
 
-![version](https://badgen.net/badge/version/v3.0.1?icon=github)
+![version](https://badgen.net/badge/version/v3.1.1?icon=github)
 ![license](https://badgen.net/github/license/RaulBejarano/Ultimate-Joint-Generator)
 ![commits](https://badgen.net/github/commits//RaulBejarano/Ultimate-Joint-Generator/main)
 
@@ -47,7 +47,8 @@ arm1 = [
     ["spin", 0],
     ["margin", 5],
     ["hole", 2],  // 0:Full opened,1:Ring,2:No hole
-    ["screw_diameter", 5]
+    ["screw_diameter", 5],
+    ["color", "#ffffff"] // (Optional) hex format (e.g. #ffffff) or color name (e.g. white) always between "".
 ];
 ```
 
@@ -60,6 +61,7 @@ arm1 = [
 - `margin` sets the margin (see parameters cheatset)
 - `hole` sets which kind of hole will be used in this arm. It can take the values: 0 for full opened, 1 for ringed and 2 for no hole.
 - `screw_diameter` if you want to use screws in an arm you should set this value to their diameter, if not set it to 0.
+- `color` (Optional) paint the arm with the chosen html color. You can use hexadecimal notation (e.g. `"#ffffff"`) or color name (e.g. `"white"`). It's optional so you don't need to set it.
 
 If you use this values and render with OpenSCAD you will get something similar to the image in parameter cheatsheet.
 
@@ -78,7 +80,9 @@ arm2 = [
     ["screw_diameter", 5]
 ];
 ```
-And add our new `arm2` to the `arms` vector:
+:exclamation: *Note that in this one there is no color parameter specified.*
+
+Finally add our new `arm2` to the `arms` vector:
 ```
 arms = [ arm1, arm2 ];
 ```

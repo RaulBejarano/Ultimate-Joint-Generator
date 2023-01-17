@@ -13,7 +13,8 @@ arm1 = [
     ["spin", 0],
     ["margin", 5],
     ["hole", 2],  // 0:Full opened,1:Ring,2:No hole
-    ["screw_diameter", 5]
+    ["screw_diameter", 5],
+    ["color", "#ffffff"] // (Optional) hex format (e.g. #ffffff) or color name (e.g. white)
 ];
 
 
