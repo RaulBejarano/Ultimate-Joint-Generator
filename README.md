@@ -1,6 +1,6 @@
 # Ultimate Joint Generator
 
-![version](https://badgen.net/badge/version/v2.0.2?icon=github)
+![version](https://badgen.net/badge/version/v3.0.0?icon=github)
 ![license](https://badgen.net/github/license/RaulBejarano/Ultimate-Joint-Generator)
 ![commits](https://badgen.net/github/commits//RaulBejarano/Ultimate-Joint-Generator/main)
 
