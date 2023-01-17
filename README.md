@@ -1,6 +1,6 @@
 # Ultimate Joint Generator
 
-![version](https://badgen.net/badge/version/v3.0.0?icon=github)
+![version](https://badgen.net/badge/version/v3.0.1?icon=github)
 ![license](https://badgen.net/github/license/RaulBejarano/Ultimate-Joint-Generator)
 ![commits](https://badgen.net/github/commits//RaulBejarano/Ultimate-Joint-Generator/main)
 
@@ -51,15 +51,15 @@ arm1 = [
 ];
 ```
 
-- `pipe_diameter = 20;` sets the inner diameter of each arm.
-- `wall_thickness = 4;` this sets the wall thickness of each arm.
+- `pipe_diameter` sets the inner diameter of each arm.
+- `wall_thickness` this sets the wall thickness of each arm.
 - `height` sets the height (length) of each arm.
 - `rotationX` sets the rotation in degrees in X plane of this arm.
 - `rotationY` sets the rotation in degrees in Y plane of this arm.
 - `spin` sets how many degrees rotates an arm over itself.
 - `margin` sets the margin (see parameters cheatset)
 - `hole` sets which kind of hole will be used in this arm. It can take the values: 0 for full opened, 1 for ringed and 2 for no hole.
-- `screw_diameter = 5;` if you want to use screws in an arm you should set this value to their diameter, if not set it to 0.
+- `screw_diameter` if you want to use screws in an arm you should set this value to their diameter, if not set it to 0.
 
 If you use this values and render with OpenSCAD you will get something similar to the image in parameter cheatsheet.
 
