@@ -4,29 +4,31 @@ use <src/generator.scad>;
 
 $fn = 100;
 
-pipe_d = 20;
-thickness = 4;
-screw_d = 5;
-
 arm1 = [
+    ["pipe_diameter", 20],
+    ["wall_thickness", 4],
     ["height", 20],
     ["rotationX", 0],
     ["rotationY", 0],
     ["spin", 0],
     ["margin", 5],
-    ["hole", 2]  // 0:Full opened,1:Ring,2:No hole
+    ["hole", 2],  // 0:Full opened,1:Ring,2:No hole
+    ["screw_diameter", 5]
 ];
 
 
 // Adding a new arm I: set parameters. Uncomment the code below by deleting /* and */
 /*
 arm2 = [
+    ["pipe_diameter", 20],
+    ["wall_thickness", 4],
     ["height", 20],
     ["rotationX", 90],
     ["rotationY", 0],
     ["spin", 0],
     ["margin", 5],
-    ["hole", 2] // 0:Full opened,1:Ring,2:No hole
+    ["hole", 2],  // 0:Full opened,1:Ring,2:No hole
+    ["screw_diameter", 5]
 ];
 */
 
@@ -35,9 +37,4 @@ arms = [ arm1 ];
 
 // End of section: Parameters
 
-generator(
-    pipe_d,
-    thickness,
-    screw_d,
-    arms
-);
+generator(arms);
