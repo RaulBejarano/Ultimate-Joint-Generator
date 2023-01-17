@@ -14,16 +14,17 @@ module generator(arms){
                 screw_d = getValue(arms[i], ["screw_diameter"]);
                 pipe_d = getValue(arms[i], ["pipe_diameter"]);
                 thickness = getValue(arms[i], ["wall_thickness"]);
+                pipe_color = getValue(arms[i], ["color"]);
 
                 h = height + pipe_d/2 + margin;
                 rotate([rotationX, rotationY, 0]){
                     rotate([0,0,spin]){
                         difference(){
                             outer_d = pipe_d + 2 * thickness;
-                            cylinder(h = h, d = outer_d);
+                            color(pipe_color) cylinder(h = h, d = outer_d);
                             translate([-outer_d/2,0, (pipe_d + height)/2 + margin]){
                                 rotate([0,90,0]){
-                                    cylinder(h = outer_d, d = screw_d);
+                                    color(pipe_color) cylinder(h = outer_d, d = screw_d);
                                 }
                             }
                         }
@@ -46,17 +47,18 @@ module generator(arms){
                 hole = getValue(arms[i], ["hole"]);
                 pipe_d = getValue(arms[i], ["pipe_diameter"]);
                 thickness = getValue(arms[i], ["wall_thickness"]);
+                pipe_color = getValue(arms[i], ["color"]);
 
                 rotate([rotationX, rotationY, 0]){
                     translate([0,0,max_inner_d/2 + margin]){
-                        cylinder(h = height, d = pipe_d);
+                        color(pipe_color) cylinder(h = height, d = pipe_d);
                     }
                     // Holes
                     h = pipe_d/2 + margin + height;
                     if (hole == 0){
-                        cylinder(h = h, d = pipe_d);
+                        color(pipe_color) cylinder(h = h, d = pipe_d);
                     } else if (hole == 1) {
-                        cylinder(h = h, d = pipe_d - 2*thickness);
+                        color(pipe_color) cylinder(h = h, d = pipe_d - 2*thickness);
                     }                
                 }
             }
