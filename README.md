@@ -6,16 +6,16 @@
 
 
 
-The Ultimate Joint Generator is an open source project that provides a way to generate STL files to 3D-printed parametric connectors to build greenhouses, pipe connectors, or whatever structure you need.
+The Ultimate Joint Generator is an open source project that provides a way to generate STL files of joint connectors to build greenhouses, pipe connectors, or whatever structure you need.
 
 |![90 degree connector](./img/preview_1.PNG)|![extended T connector](./img/preview_2.PNG)|
 |---|---|
 
 
 ## :sparkles: Features
-| ![](./img/multitube.PNG)  | ![](./img/angles_and_margins.PNG)  | ![](./img/hole_types.PNG)  | ![](./img/madness.PNG)  |
+| ![](./img/multitube.PNG)  | ![](./img/angles_and_margins.PNG)  | ![](./img/hole_types.PNG)  | ![](./img/configurable.PNG)  |
 |---|---|---|---|
-|  Multi-arm  |  Safe pipe connectors  | Three hole types  |  Madness allowed  |
+|  Multi-arm  |  Safe pipe connectors  | Three hole types  |  Highly configurable  |
 |  You can create connectors with as many arms as you want  |  You can create margins to avoid pipes colisions inside the connector   |  You can choose between 3 types of holes: full opened, ringed or closed  |  Create the monster connector that you need in a simple way  |
 
 
@@ -35,30 +35,31 @@ Fist of all you have to download several things:
 Let's start by opening the file `example.scad` with OpenSCAD.
 
 You will see some code but we only are interested in the parameters inside the section `Parameters`. Let's change some of them:
-
-- `pipe_d = 20;` this is the diameter of every pipe that will connect to our connector
-- `thickness = 4;` this sets the size of the walls of the connector.
-- `screw_d = 5;` if you want to use screws you should set this value to their diameter, if not set it to 0.
   
-And now the difficult part. This defines an arm:
+This defines an arm:
 ```
 arm1 = [
+    ["pipe_diameter", 20],
+    ["wall_thickness", 4],
     ["height", 20],
     ["rotationX", 0],
     ["rotationY", 0],
     ["spin", 0],
     ["margin", 5],
-    ["hole", 2]
+    ["hole", 2],  // 0:Full opened,1:Ring,2:No hole
+    ["screw_diameter", 5]
 ];
 ```
 
-
+- `pipe_diameter = 20;` sets the inner diameter of each arm.
+- `wall_thickness = 4;` this sets the wall thickness of each arm.
 - `height` sets the height (length) of each arm.
 - `rotationX` sets the rotation in degrees in X plane of this arm.
 - `rotationY` sets the rotation in degrees in Y plane of this arm.
 - `spin` sets how many degrees rotates an arm over itself.
 - `margin` sets the margin (see parameters cheatset)
 - `hole` sets which kind of hole will be used in this arm. It can take the values: 0 for full opened, 1 for ringed and 2 for no hole.
+- `screw_diameter = 5;` if you want to use screws in an arm you should set this value to their diameter, if not set it to 0.
 
 If you use this values and render with OpenSCAD you will get something similar to the image in parameter cheatsheet.
 
@@ -66,12 +67,15 @@ But, probably you want to have more than an arm so let's add something like this
 
 ```
 arm2 = [
+    ["pipe_diameter", 20],
+    ["wall_thickness", 4],
     ["height", 20],
     ["rotationX", 90],
     ["rotationY", 0],
     ["spin", 0],
     ["margin", 5],
-    ["hole", 2] // 0:Full opened,1:Ring,2:No hole
+    ["hole", 2],  // 0:Full opened,1:Ring,2:No hole
+    ["screw_diameter", 5]
 ];
 ```
 And add our new `arm2` to the `arms` vector:

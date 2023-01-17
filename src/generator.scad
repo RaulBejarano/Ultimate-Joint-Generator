@@ -21,7 +21,7 @@ module generator(arms){
                         difference(){
                             outer_d = pipe_d + 2 * thickness;
                             cylinder(h = h, d = outer_d);
-                            translate([-max_outer_d/2,0, (pipe_d + height)/2 + margin]){
+                            translate([-outer_d/2,0, (pipe_d + height)/2 + margin]){
                                 rotate([0,90,0]){
                                     cylinder(h = outer_d, d = screw_d);
                                 }
