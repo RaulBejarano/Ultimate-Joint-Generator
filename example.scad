@@ -6,7 +6,6 @@ $fn = 100;
 
 pipe_d = 20;
 thickness = 4;
-screw_d = 5;
 
 arm1 = [
     ["height", 20],
@@ -14,7 +13,8 @@ arm1 = [
     ["rotationY", 0],
     ["spin", 0],
     ["margin", 5],
-    ["hole", 2]  // 0:Full opened,1:Ring,2:No hole
+    ["hole", 2],  // 0:Full opened,1:Ring,2:No hole
+    ["screw_d", 5]
 ];
 
 
@@ -26,7 +26,8 @@ arm2 = [
     ["rotationY", 0],
     ["spin", 0],
     ["margin", 5],
-    ["hole", 2] // 0:Full opened,1:Ring,2:No hole
+    ["hole", 2],  // 0:Full opened,1:Ring,2:No hole
+    ["screw_d", 5]
 ];
 */
 
@@ -38,6 +39,5 @@ arms = [ arm1 ];
 generator(
     pipe_d,
     thickness,
-    screw_d,
     arms
 );

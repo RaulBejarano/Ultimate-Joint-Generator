@@ -1,7 +1,6 @@
 module generator(
     pipe_d = 20,
     thickness = 4,
-    screw_d = 5,
     arms
 ){
     outer_d = pipe_d + 2 * thickness;
@@ -16,6 +15,7 @@ module generator(
                 spin = getValue(arms[i], ["spin"]);
                 margin = getValue(arms[i], ["margin"]);
                 hole = getValue(arms[i], ["hole"]);
+                screw_d = getValue(arms[i], ["screw_d"]);
 
                 h = height + pipe_d/2 + margin;
                 rotate([rotationX, rotationY, 0]){
